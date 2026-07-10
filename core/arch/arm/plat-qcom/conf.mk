@@ -24,11 +24,14 @@ supported-ta-targets ?= ta_arm64
 # Architecture family mapping
 HOYA_ARCH_CHIPSETS := kodiak lemans
 BOBCAT_ARCH_CHIPSETS := ipq96xx ipq52xx
+WILDCAT_ARCH_CHIPSETS := coco
 
 ifneq (,$(filter $(PLATFORM_FLAVOR),$(HOYA_ARCH_CHIPSETS)))
 QCOM_ARCH_FAMILY := hoya
 else ifneq (,$(filter $(PLATFORM_FLAVOR),$(BOBCAT_ARCH_CHIPSETS)))
 QCOM_ARCH_FAMILY := bobcat
+else ifneq (,$(filter $(PLATFORM_FLAVOR),$(WILDCAT_ARCH_CHIPSETS)))
+QCOM_ARCH_FAMILY := wildcat
 else
 $(error Unsupported PLATFORM_FLAVOR: $(PLATFORM_FLAVOR))
 endif
