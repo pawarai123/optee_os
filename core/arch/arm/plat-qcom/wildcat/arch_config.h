@@ -6,7 +6,9 @@
 #ifndef ARCH_CONFIG_H
 #define ARCH_CONFIG_H
 
-#define GICD_BASE			UL(0x17000000)
-#define GICR_BASE			UL(0x17080000)
+/*
+ * GICD_BASE and GICR_BASE differ between Wildcat chips; define them in
+ * each chip's target_config.h.
+ */
 
 #endif /* ARCH_CONFIG_H */
